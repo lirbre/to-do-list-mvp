@@ -6,19 +6,24 @@ import {
   Wrapper,
   EditButton,
   DelButton,
+  EmptyMessage,
 } from "./styles";
 
 const ListItems = ({ posts, delPost, editPost }) => {
   return (
     <Container>
       <Wrapper>
-        {posts.map((post) => (
-          <ListItem key={post.id}>
-            <ListItemText>{post.postText}</ListItemText>
-            <EditButton onClick={() => editPost(post)} />
-            <DelButton onClick={() => delPost(post.id)} />
-          </ListItem>
-        ))}
+        {posts.length !== 0 ? (
+          posts.map((post) => (
+            <ListItem key={post.id}>
+              <ListItemText>{post.postText}</ListItemText>
+              <EditButton onClick={() => editPost(post)} />
+              <DelButton onClick={() => delPost(post.id)} />
+            </ListItem>
+          ))
+        ) : (
+          <EmptyMessage>Não há nada adicionado.</EmptyMessage>
+        )}
       </Wrapper>
     </Container>
   );

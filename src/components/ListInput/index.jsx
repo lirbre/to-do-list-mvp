@@ -20,7 +20,8 @@ const ListInput = () => {
     setPost(e.target.value);
   };
 
-  const addPost = () => {
+  const addPost = (e) => {
+    e.preventDefault()
     let newPost = { id: v4(), postText: post };
     let includePost = posts.concat(newPost);
 
@@ -75,9 +76,12 @@ const ListInput = () => {
               onChange={editInputPost}
               value={currentPost.postText}
               type="text"
+
+              required
+              aria-required={true}
             />
             <Button type="submit">Editar</Button>
-            <Button onClick={() => setIsEditing(false)}>Cancelar</Button>
+            <Button type="cancel" onClick={() => setIsEditing(false)}>Cancelar</Button>
           </Wrapper>
         </>
       ) : (
@@ -90,6 +94,9 @@ const ListInput = () => {
               onChange={inputText}
               value={post}
               type="text"
+
+              required
+              aria-required={true}
             />
             <Button type="submit">Adicionar</Button>
           </Wrapper>

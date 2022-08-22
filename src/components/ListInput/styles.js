@@ -26,9 +26,9 @@ export const Input = styled.input`
   background: #262626;
   color: #808080;
 
-  &::placeholder {
-    padding: 10px;
-  }
+  border: none;
+
+  padding: 10px;
 `;
 export const Button = styled.button`
   background: #1e6f9f;
@@ -39,4 +39,9 @@ export const Button = styled.button`
   width: 80px;
   height: 40px;
   margin-top: 20px;
+  cursor: pointer;
+
+  :hover {
+    opacity: 90%;
+  }
 `;

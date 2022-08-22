@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 1.2rem;
 `;
 
 export const ListItem = styled.div`
@@ -24,18 +25,34 @@ export const ListItem = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
 
-  margin-top: 30px;
+  gap: 12px;
 `;
 
 export const ListItemText = styled.p`
   color: #f2f2f2;
+  margin-right: auto;
 `;
 
 export const EditButton = styled(FaEdit)`
   color: #808080;
+  cursor: pointer;
+  
+  :hover {
+    opacity: 90%;
+  }
 `;
 
 export const DelButton = styled(FaTrash)`
+  color: #808080;
+  cursor: pointer;
+
+  :hover {
+    opacity: 90%;
+  }
+`;
+
+export const EmptyMessage = styled.p`
   color: #808080;
 `;

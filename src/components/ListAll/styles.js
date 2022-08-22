@@ -11,4 +11,13 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  max-width: 650px;
+
+  padding-bottom: 2rem;
+
+  @media (max-width: 700px) {
+    width: 95%;
+  }
 `;
